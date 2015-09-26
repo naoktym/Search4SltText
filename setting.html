@@ -1,0 +1,90 @@
+<h1>Setting</h1>
+<div id="def-disp-tab">
+	<h3 id="test1">Default Display Dictionary</h3>
+	<div class="ui form">
+		<div class="grouped fields">
+			<label>Which dictionary of web site would you like to see at first?</label>
+			<div class="field">
+				<div class="ui radio checkbox">
+					<input type="radio" name="defDisp" value="eng">
+					<label>English to English</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui radio checkbox">
+					<input type="radio" name="defDisp" value="oth">
+					<label>English to Other language</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<h3>English Langueage Dictionary</h3>
+<div class="ui form">
+	<div class="grouped fields">
+		<label>Which kind of dictionary would you like?</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="engDic" value="ox">
+				<label>Oxford Dictionaries</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="engDic" value="cm">
+				<label>Cambridge Dictionaries</label>
+			</div>
+		</div>
+	</div>
+</div>
+<h3>Other Langueage Dictionary</h3>
+<div class="ui form">
+	<div class="grouped fields">
+		<label>Which kind of dictionary would you like?</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="othDic" value="jp">
+				<label>Weblio (English to Japanese)</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="othDic" value="kr">
+				<label>Daum (English to Korean)</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input type="radio" name="othDic" value="sp">
+				<label>English to Spanish</label>
+			</div>
+		</div>
+	</div>
+</div>
+<button id="save" class="btn btn-default btn-wide">Save</button>
+
+<script type="text/javascript">
+$('#save').on('click', function() {
+
+	// TODO Check selected value
+
+	localStorage['defDisp'] = $("input[name='defDisp']:checked").val();
+	localStorage['engDic'] = $("input[name='engDic']:checked").val();
+	localStorage['othDic'] = $("input[name='othDic']:checked").val();
+});
+
+// Initial execute
+$(function() {
+	var dd = localStorage['defDisp'];
+	var ed = localStorage['engDic'];
+	var od = localStorage['othDic'];
+
+	// TODO Check defDisp to exist value
+	// TODO Check othDic to exist value
+	// TODO If nothing value, set default value
+
+	$("input[name='defDisp'][value='" + dd + "']").prop('checked', true);
+	$("input[name='engDic'][value='" + ed + "']").prop('checked', true);
+	$("input[name='othDic'][value='" + od + "']").prop('checked', true);
+});
+</script>

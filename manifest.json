@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "SearchForSltText Ver 0.8",
+  "version": "1.0",
+  "description": "To search for selected text",
+  "background": {
+    "scripts" : ["jquery-1.11.3.min.js", "background.js"]
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    "content.html"
+  ],
+  "icons": {
+    "16" : "images/GB-19.png",
+    "48" : "images/GB-48.png",
+    "128" : "images/GB-128.png"
+  },
+  "permissions": ["contextMenus", "tabs", "http://*/*", "https://*/*", "<all_urls>"]
+}
